@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وب‌سایت من</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CUCSBET خوش آمدید به </h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="loadContent('home')">خانه</a></li>
+                    <li><a href="#" onclick="loadContent('about')">BET</a></li>
+                    <li><a href="#" onclick="loadContent('contact')">تماس با ما</a></li>
+                    <li>
+                        <button class="uiverse" onclick="loadContent('login')">
+                            <div class="wrapper">
+                                <span>ورود</span>
+                                <div class="circle circle-12"></div>
+                                <div class="circle circle-11"></div>
+                                <div class="circle circle-10"></div>
+                                <div class="circle circle-9"></div>
+                                <div class="circle circle-8"></div>
+                                <div class="circle circle-7"></div>
+                                <div class="circle circle-6"></div>
+                                <div class="circle circle-5"></div>
+                                <div class="circle circle-4"></div>
+                                <div class="circle circle-3"></div>
+                                <div class="circle circle-2"></div>
+                                <div class="circle circle-1"></div>
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="content">
+            <section id="home">
+                <h2>خانه</h2>
+                <p>این یک وب‌سایت ساده است که با HTML و CSS ساخته شده است.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="loading" class="loading">
+        <div class="container">
+            <div class="item" style="--i:0;"></div>
+            <div class="item" style="--i:1;"></div>
+            <div class="item" style="--i:2;"></div>
+            <div class="item" style="--i:3;"></div>
+            <div class="item" style="--i:4;"></div>
+            <div class="item" style="--i:5;"></div>
+            <div class="item" style="--i:6;"></div>
+            <div class="item" style="--i:7;"></div>
+            <div class="item" style="--i:8;"></div>
+            <div class="item" style="--i:9;"></div>
+            <div class="item" style="--i:10;"></div>
+            <div class="item" style="--i:11;"></div>
+            <div class="item" style="--i:12;"></div>
+            <div class="item" style="--i:13;"></div>
+            <div class="item" style="--i:14;"></div>
+            <div class="item" style="--i:15;"></div>
+            <div class="item" style="--i:16;"></div>
+            <div class="item" style="--i:17;"></div>
+            <div class="item" style="--i:18;"></div>
+            <div class="item" style="--i:19;"></div>
+            <div class="item" style="--i:20;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 CUCSBET. همه حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        function loadContent(page) {
+            // نمایش انیمیشن لودینگ
+            document.getElementById('loading').style.display = 'flex';
+
+            // مخفی کردن محتوای اصلی
+            document.getElementById('content').style.display = 'none';
+
+            // شبیه‌سازی بارگذاری
+            setTimeout(function() {
+                let content = '';
+
+                if (page === 'home') {
+                    content = `<section id="home">
+                                   <h2>خانه</h2>
+                                   <p>این یک وب‌سایت ساده است که با HTML و CSS ساخته شده است.</p>
+                               </section>`;
+                } else if (page === 'about') {
+                    content = `<section id="about">
+                                   <div class="game-container">
+                                       <h4>بازی شرط بندی 777</h4>
+                                       <div class="result">
+                                           <div class="slot" id="slot1">0</div>
+                                           <div class="slot" id="slot2">0</div>
+                                           <div class="slot" id="slot3">0</div>
+                                       </div>
+                                       <button id="playButton">بزن بریم!</button>
+                                       <div id="message"></div>
+                                   </div>
+                               </section>`;
+                } else if (page === 'contact') {
+                    content = `<section id="contact">
+                                   <h2>تماس با ما</h2>
+                                   <p>برای ارتباط با ما، لطفاً از فرم زیر استفاده کنید.</p>
+                                   <form>
+                                       <label for="name">نام:</label>
+                                       <input type="text" id="name" name="name" required>
+                                       <label for="email">ایمیل:</label>
+                                       <input type="email" id="email" name="email" required>
+                                       <label for="message">پیام:</label>
+                                       <textarea id="message" name="message" rows="4" required></textarea>
+                                       <button type="submit">ارسال</button>
+                                   </form>
+                               </section>`;
+                } else if (page === 'login') {
+                    content = `<section id="login">
+                                   <h2>ورود</h2>
+                                   <p>لطفاً اطلاعات خود را وارد کنید.</p>
+                                   <form>
+                                       <label for="username">نام کاربری:</label>
+                                       <input type="text" id="username" name="username" required>
+                                       <label for="password">رمز عبور:</label>
+                                       <input type="password" id="password" name="password" required>
+                                       <button type="submit">ورود</button>
+                                   </form>
+                               </section>`;
+                }
+
+                // بارگذاری محتوای جدید
+                document.getElementById('content').innerHTML = content;
+
+                // نمایش محتوای جدید
+                document.getElementById('content').style.display = 'block';
+
+                // مخفی کردن انیمیشن لودینگ
+                document.getElementById('loading').style.display = 'none';
+
+                // اگر صفحه "درباره ما" است، راه‌اندازی بازی
+                if (page === 'about') {
+                    setupGame();
+                }
+            }, 700); // زمان بارگذاری ۰.۷ ثانیه
+        }
+
+        function setupGame() {
+            document.getElementById('playButton').addEventListener('click', function() {
+                // تولید اعداد تصادفی بین 0 تا 9
+                const slot1 = Math.floor(Math.random() * 10);
+                const slot2 = Math.floor(Math.random() * 10);
+                const slot3 = Math.floor(Math.random() * 10);
+
+                // نمایش اعداد در اسلات‌ها
+                document.getElementById('slot1').textContent = slot1;
+                document.getElementById('slot2').textContent = slot2;
+                document.getElementById('slot3').textContent = slot3;
+
+                // بررسی برنده شدن
+                if (slot1 === 7 && slot2 === 7 && slot3 === 7) {
+                    document.getElementById('message').textContent = "شما برنده شدید! 🎉";
+                } else {
+                    document.getElementById('message').textContent = "متاسفم! سعی کنید دوباره.";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #e4c560;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+nav ul li button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+    background: #e4c560;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin: 20px 0;
+}
+
+h2 {
+    color: #35424a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #35424a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e4c560;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Styles for loading animation */
+.loading {
+    display: none; /* مخفی به صورت پیش‌فرض */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* رنگ پس‌زمینه سیاه */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading .container {
+    position: absolute;
+    top: 40%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    position: absolute;
+    background-color: transparent;
+    width: calc(var(--i) * 2.5vmin);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: .9vmin solid rgb(0, 200, 255);
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: my-move 3s ease-in-out calc(var(--i) * 0.08s) infinite;
+    box-shadow: 0px 0px 15px rgb(124, 124, 124),
+        inset 0px 0px 15px rgb(124, 124, 124);
+}
+
+/* Styles for the game */
+.game-container {
+    margin-top: 20px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.slot {
+    font-size: 50px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #35424a;
+    display: inline-block;
+    margin: 0 10px;
+    line-height: 60px;
+    border-radius: 10px;
+    background-color: #e4c560;
+    transition: transform 0.3s;
+}
+
+.slot:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#message {
+    font-size: 20px;
+    color: #35424a;
+}
